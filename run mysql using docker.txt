@@ -1,0 +1,38 @@
+Commands in command prompt terminal:
+
+docker pull mysql -- to pull the image in the docker application
+
+docker run –name test_mysql1 -p 3306:3306 -e MYSQL_ROOT_PASSWORD-my-password -d mysql
+
+docker ps -- to see running containers
+
+Commands in the mysql container:
+
+SELECT NOW()
+
+CREATE SCHEMA PERSONDETAIL;
+
+CREATE TABLE PERSONS (
+PERSONID INT,
+LASTNAME VARCHAR(24),
+FIRSTNAME VARCHAR(24),
+CITY VARCHAR(24),
+PHONE INT
+);
+
+INSERT INTO PERSONS (PERSONID, LASTNAME, FIRSTNAME, CITY, PHONE)
+VALUES (001,”TARIQ”,”MAHMOOD”,”KARACHI”,”090078601”);
+INSERT INTO PERSONS (PERSONID, LASTNAME, FIRSTNAME, CITY, PHONE)
+VALUES (002,”HAMMAD”,”HADI”,”QUETTA”,”030012345”);
+
+SELECT * FROM PERSONDETAIL.PERSONS
+
+Exit the docker:
+
+"Ctrl+d" or
+
+docker exec -it test_mysql1 mysql -p 
+Enter password: my-password
+mysql> exit
+
+
